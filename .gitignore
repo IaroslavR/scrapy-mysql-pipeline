@@ -1,0 +1,7 @@
+.idea/
+.eggs/
+*.egg-info/
+dist/
+ChangeLog
+AUTHORS
+README.rst

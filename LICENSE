@@ -1,5 +1,7 @@
 MIT License
 
+scrapy_mysql_pipeline: Asynchronous mysql Scrapy item pipeline
+
 Copyright (c) 2017 Iaroslav Russkykh
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
