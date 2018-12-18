@@ -77,11 +77,29 @@ class MySQLPipeline(object):  #
         self.retries = self.settings.get('MYSQL_RETRIES', 3)
         self.close_on_error = self.settings.get('MYSQL_CLOSE_ON_ERROR', True)
         self.upsert = self.settings.get('MYSQL_UPSERT', False)
-        self.table = self.settings.get('MYSQL_TABLE', None)
+        table_specifier = self.settings.get('MYSQL_TABLE', None)
+        if table_specifier is not None:
+            if '%' in table_specifier:
+                # Allow spider's name to be substituted using sprintf
+                self.get_table = lambda: table_specifier % self.spider.name
+            else:
+                # Table name is the same for all spiders
+                self.get_table = lambda: table_specifier
+        else:
+            # Default is to use the spider's name as the table name
+            self.get_table = lambda: self.spider.name
+
         self.db = adbapi.ConnectionPool('pymysql', **db_args)
 
     def close_spider(self, spider):
         self.db.close()
+
+    def open_spider(self, spider):
+        self.spider = spider
+
+    @property
+    def table(self):
+        return self.get_table()
 
     @staticmethod
     def preprocess_item(item):
