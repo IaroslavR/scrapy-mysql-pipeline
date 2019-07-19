@@ -50,6 +50,7 @@ class MySQLPipeline(object):  #
     MYSQL_UPSERT = False
     MYSQL_RETRIES = 3
     MYSQL_CLOSE_ON_ERROR = True
+    MYSQL_CHARSET = 'utf8'
     Pipeline:
     ITEM_PIPELINES = {
        'scrapy_mysql_pipeline.MySQLPipeline': 300,
@@ -70,7 +71,7 @@ class MySQLPipeline(object):  #
             'user': self.settings.get('MYSQL_USER', None),
             'password': self.settings.get('MYSQL_PASSWORD', ''),
             'db': self.settings.get('MYSQL_DB', None),
-            'charset': 'utf8',
+            'charset': self.settings.get('MYSQL_CHARSET', 'utf8'),
             'cursorclass': DictCursor,
             'cp_reconnect': True,
         }
