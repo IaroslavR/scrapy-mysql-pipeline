@@ -1,5 +1,7 @@
 ![Python 3.6](https://img.shields.io/badge/Python-3.6-blue.svg)  
 
+# Pull requests are always welcome 
+
 ## scrapy-mysql-pipeline  
 Asynchronous mysql [Scrapy](https://doc.scrapy.org/en/latest/) item pipeline  
 
