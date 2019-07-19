@@ -25,5 +25,6 @@ MYSQL_TABLE = None
 MYSQL_UPSERT = False
 MYSQL_RETRIES = 3
 MYSQL_CLOSE_ON_ERROR = True
+MYSQL_CHARSET = 'utf8'
 ```
-MYSQL_TABLE variable must be set in settings.py  
+`MYSQL_USER`, `MYSQL_PASSWORD`, `MYSQL_DB` and `MYSQL_TABLE`,  variables must be set in settings.py  
