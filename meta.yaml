@@ -8,13 +8,13 @@ source:
 
 requirements:
   build:
-    - python
+    - python=3.8
     - setuptools
-    - scrapy
-    - mysql
 
   run:
-    - python
+    - python>=3.8
+    - scrapy
+    - mysql
 
 #test:
 #  imports:
