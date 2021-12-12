@@ -8,7 +8,7 @@ if "PY_DEV" in os.environ:
 else:
     os.environ.update(SKIP_WRITE_GIT_CHANGELOG='1')
 os.environ.update(SKIP_GENERATE_AUTHORS='1')
-setuptools.setup(
-    setup_requires=['pbr', ],
-    pbr=True
-)
+# setuptools.setup(
+#     setup_requires=['pbr', ],
+#     pbr=True
+# )
