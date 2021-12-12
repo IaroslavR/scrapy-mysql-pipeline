@@ -1,0 +1,7 @@
+name: scrapy-mysql-pipeline
+channels:
+  - conda-forge
+dependencies:
+    - python>=3.8
+    - scrapy
+    - sqlalchemy

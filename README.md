@@ -6,6 +6,7 @@
 Asynchronous mysql [Scrapy](https://doc.scrapy.org/en/latest/) item pipeline  
 
 #### Installation  
+
 ```bash
 pip install scrapy-mysql-pipeline
 ```
