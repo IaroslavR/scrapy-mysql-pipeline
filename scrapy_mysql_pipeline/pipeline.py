@@ -126,7 +126,7 @@ class MySQLPipeline(object):  #
             if self.close_on_error:  # Close spider if connection error happened and MYSQL_CLOSE_ON_ERROR = True
                 spider.crawler.engine.close_spider(spider, '{}_fatal_error'.format(self.stats_name))
         self.postprocess_item(item, status)
-        yield item
+        returm item
 
     def _generate_sql(self, data):
         columns = lambda d: ', '.join(['`{}`'.format(k) for k in d])
